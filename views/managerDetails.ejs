@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    </head>
+    <script src="../DAL/Report.js"></script>
+
+
+
+    <body>
+        <h2>Name: &nbsp;&nbsp;<%=element.firstName%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=element.lastName%></h2><br/>
+        <h2>Poisition: &nbsp;&nbsp;<%=element.position%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2><br/>
+        _________________________________________________________________________________________<br/><br/>
+        <form action="/newReport/1/<%=element.firstName%>/<%=element.lastName%>">
+            <button type="submit" >Report</button>
+        </form>
+
+        <h2>My Report:</h2>    
+
+        <table border="1">
+            <tr>
+              <th>report text</th>
+              <th>date</th>
+            </tr>
+            <% report.forEach(function(r) { %>
+              <tr>
+                <td><input id="firstname" name="firstname" value="<%= r.text %>"></input></td> 
+                <td><input id="lastname" name="lastname" value="<%= r.date %>"></input></td>
+             </tr>
+              <%  })%>
+
+        </table>
+        
+
+        <h2>my subordinates:</h2>   
+        <form action="/newTask" method="post">
+          <% myEmployees.forEach(function(employee) { %>
+            <input id="firstname" name="firstname" value="<%= employee.employeeFirstName %>"></input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="lastname" name="lastname" value="<%= employee.employeeLastName %>"></input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="position" name="position" value="employee"></input>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" name="personTask" value="<%= employee.employeeFirstName %> <%= employee.employeeLastName%>">Assign Task</button>
+            <br/><br/>
+            <%  })%>
+        </form>     
+    </body>
+</html>

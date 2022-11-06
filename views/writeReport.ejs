@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <h3>Report to <%=element%></h3>
+   </head>
+
+   <body>
+      <form action = "/saveReport/<%=element%>" method = "post">
+         <br>
+         <textarea rows = "8" cols = "100" name = "report">
+         </textarea><br>
+         <input type = "submit" value = "Save" /><br/><br/><br/>
+      </form>
+
+
+      <form action="/">
+        <input type = "submit" value = "Cancel" />
+      </form>
+   </body>
+</html>

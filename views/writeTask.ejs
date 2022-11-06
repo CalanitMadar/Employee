@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <h3>task to <%=name%></h3>
+   </head>
+
+   <body>
+      <form action = "/saveTask/<%=name%>" method = "post">
+         <br>
+         <textarea rows = "8" cols = "100" name = "report">
+         </textarea><br>
+         select date <input type="date" value="2022-06-01" name="dateTask" /><br/><br/><br/>
+
+         <input type = "submit" value = "Save" /><br/><br/><br/>
+      </form>
+
+
+      <form action="/">
+        <input type = "submit" value = "Cancel" />
+      </form>
+   </body>
+</html>

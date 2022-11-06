@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    
+  <head>
+    
+  </head>
+  
+  <body>
+    
+    <h3>Report</h3>
+      <form action="/newReport" method="post">
+        <% element.forEach(function(employee) { %>
+          <button id="name" name="name" value="<%= employee.firstName %> <%= employee.lastName %>"><%= employee.firstName %> <%= employee.lastName %></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <br/><br/>
+          <%  })%>
+      </form>
+
+  </body>
+
+</html>

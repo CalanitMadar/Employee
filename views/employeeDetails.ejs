@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    </head>
+
+
+    <body>
+        <h2>Name: &nbsp;&nbsp;<%=element.firstName%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=element.lastName%></h2><br/>
+        <h2>Poisition: &nbsp;&nbsp;<%=element.position%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2><br/>
+        <h2>Manager: &nbsp;&nbsp;<%=element.manager.firstName%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=element.manager.lastName%></h2><br/>
+        _________________________________________________________________________________________<br/><br/>
+        <form action="/newReport/2/<%=element.firstName%>/<%=element.lastName%>">
+            <button type="submit" >Report</button>
+        </form>
+
+
+
+        <h2>My tasks:</h2>
+        <% myTasks.forEach(function(m) { %>
+            Task: <input id="text" name="text" value="<%= m.text %>"></input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           Due date:  <input id="dueDate" name="dueDate" value="<%= m.dueDate %>"></input> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br/><br/>
+            <%  })%>
+        
+    </body>
+</html>
